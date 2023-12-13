@@ -4,15 +4,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from config import SmtpCredentials
 
-port = 465
-
-c = SmtpCredentials(
-    server="smtp.gmail.com",
-    sender="youremailgoeshere.com",
-    password="yourapppasword",
-    port=465
-)
-
 
 def send_mail(credentials, receiver):
     message = MIMEMultipart()
@@ -52,5 +43,5 @@ def send_mail(credentials, receiver):
         return str(e)
 
 
-result = send_mail(c, "mahela.nipun@gmail.com")
+result = send_mail(SmtpCredentials(), "mahela.nipun@gmail.com")
 print(result)
